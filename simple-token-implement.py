@@ -17,6 +17,8 @@ token_lock = Lock()
 # Global variable to keep track of the timer
 current_timer = None
 timer_lock = Lock()  # Lock object to protect current_timer
+# Read timer duration from environment variable, default to 1800 seconds if not set
+timer_duration = int(os.getenv('TIMER_DURATION', '1800')) # 1800 seconds = 30 minutes
 
 
 # Define a function to reset tokens and restart the timer
@@ -44,7 +46,7 @@ def start_timer():
             print("Previous timer cancelled.")
         
         # Start a new timer
-        current_timer = Timer(1800, reset_tokens) # 1800 seconds = 30 minutes
+        current_timer = Timer(timer_duration, reset_tokens) # 1800 seconds = 30 minutes
         current_timer.start()
         print("New timer started.")
 
