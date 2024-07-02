@@ -99,8 +99,8 @@ podman build -t quay.io/wangzheng422/qimgs:simple-token-implement-2024.07.02-v01
 
 # try it
 podman run -p 5000:5000 \
-    -e TOTAL_TOKENS=11 \
-    -e TIMER_DURATION=60 \
+    -e TOTAL_TOKENS=1 \
+    -e TIMER_DURATION=10 \
     quay.io/wangzheng422/qimgs:simple-token-implement-2024.07.02-v01
 
 # make api call

@@ -73,11 +73,11 @@ def issue_token():
             available_tokens -= 1
             message = {"message": "Token issued successfully.", "available_tokens": available_tokens, "info": info}
             status_code = 200
+
+            start_timer()  # Restart the timer when a token is issued
         else:
             message = {"message": "No tokens available.", "available_tokens": available_tokens, "info": info}
             status_code = 400
-
-        start_timer()  # Restart the timer when a token is issued
 
     # Display the message to the standard output
     print(f"Response: {message}", file=sys.stdout)
