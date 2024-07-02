@@ -31,7 +31,7 @@ def reset_tokens():
         if available_tokens == 0:
             available_tokens = total_tokens
             # available_tokens += 1
-            print("Tokens reset to total tokens due to inactivity. Available tokens: ", available_tokens)
+            print(f"Tokens reset to total tokens due to inactivity. Available tokens: {available_tokens}", file=sys.stdout)
         # Reset the issue_token_calls counter regardless of token reset
         # issue_token_calls = 0
     # Restart the timer
@@ -43,12 +43,12 @@ def start_timer():
         if current_timer is not None:
             # Cancel the existing timer
             current_timer.cancel()
-            print("Previous timer cancelled.")
+            print("Previous timer cancelled.", file=sys.stdout)
         
         # Start a new timer
         current_timer = Timer(timer_duration, reset_tokens) # 1800 seconds = 30 minutes
         current_timer.start()
-        print("New timer started.")
+        print("New timer started.", file=sys.stdout)
 
 
 def is_authorized():
