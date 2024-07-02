@@ -15,7 +15,6 @@ EXPOSE 5000
 
 # Define environment variable
 ENV FLASK_APP=simple-token-implement.py
-ENV TOTAL_TOKENS=1
 
 # Run simple-token-implement.py when the container launches
 CMD ["flask", "run", "--host=0.0.0.0"]
