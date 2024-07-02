@@ -8,7 +8,8 @@ import os  # Import the os module
 app = Flask(__name__)
 
 # Initialize token variables and lock
-# total_tokens = 1  # This can be configured to any number
+# the program is designed to work with 1 tokens
+# if a multiple tokens pool needed, it is better to define a class to manage the token pool and timeout
 total_tokens = int(os.getenv('TOTAL_TOKENS', '1'))  # Default to 1 if not set
 available_tokens = total_tokens
 token_lock = Lock()
