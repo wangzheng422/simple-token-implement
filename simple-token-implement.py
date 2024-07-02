@@ -1,8 +1,9 @@
-"""Module providing a function printing python version."""
+"""Module providing a singleton token service."""
 
 from flask import Flask, jsonify, request
 from threading import Lock
 import sys
+import os  # Import the os module
 
 app = Flask(__name__)
 
@@ -12,7 +13,8 @@ def is_authorized():
     return password == expected_password
 
 # Initialize token variables and lock
-total_tokens = 1  # This can be configured to any number
+# total_tokens = 1  # This can be configured to any number
+total_tokens = int(os.getenv('TOTAL_TOKENS', '1'))  # Default to 1 if not set
 available_tokens = total_tokens
 token_lock = Lock()
 
