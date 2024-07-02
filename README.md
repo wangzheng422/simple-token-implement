@@ -97,6 +97,8 @@ cd simple-token-implement
 
 podman build -t quay.io/wangzheng422/qimgs:simple-token-implement-2024.07.02-v01 -f py311.dockerfile ./
 
+podman push quay.io/wangzheng422/qimgs:simple-token-implement-2024.07.02-v01
+
 # try it
 podman run -p 5000:5000 \
     -e TOTAL_TOKENS=1 \
