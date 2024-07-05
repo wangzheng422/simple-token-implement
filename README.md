@@ -63,11 +63,7 @@ Requests to this API must include an `X-API-PASSWORD` header with the correct pa
 ### Requesting a Token
 
 ```bash
-
-
-curl
-
- -H "X-API-PASSWORD: your_password_here" "http://localhost:5000/issue_token?info=example"
+curl -H "X-API-PASSWORD: your_password_here" "http://localhost:5000/issue_token?info=example"
 ```
 
 ### Response
