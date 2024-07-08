@@ -1,9 +1,15 @@
 # simple-token-implement
 
 # Overview
-This API allows clients to request tokens. Each token represents a permission or a right to perform certain actions within another service. The total number of tokens available is configurable through an environment variable.
 
-Based on the provided Python script snippet and previous context about the [`simple-token-implement.py`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Fwzh%2Fdev%2Fsimple-token-implement%2Fsimple-token-implement.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "/home/wzh/dev/simple-token-implement/simple-token-implement.py") application, here's a simple API documentation in Markdown format. This documentation assumes the application provides an endpoint to issue tokens and requires a password sent as a header for authorization.
+This API allows clients to request tokens. Each token represents a permission or a right to perform certain actions within another service. The total number of tokens available is configurable through an environment variable. Currently, it is better to use only 1 token, as token timeout case is not implemented for several tokens.
+
+For the token, it has such logic:
+1. issue a token
+2. release/recycle the token
+3. token has a pre-defined timeout, for case such as pod restart, and the token is not released properly. If token timeout is reached, it is automatically released.
+
+This documentation assumes the application provides an endpoint to issue tokens and requires a password sent as a header for authorization.
 
 ---
 
